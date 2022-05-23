@@ -1,0 +1,16 @@
+{
+  "name": "russia_hack_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run esbuild && ./build/build.sh",
+    "esbuild": "esbuild src/index.js --bundle --outfile=dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.39"
+  }
+}
