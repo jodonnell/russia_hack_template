@@ -22,8 +22,6 @@ function normalize(user) {
 window.hbc = {};
 window.hbc.imageNameForDemographic = (user) => {
  const normalizedUser = normalize(user);
-  if (user.politics < 3)
-    return '10.jpg';
   if (user.state === 'TX')
     return '1.jpg';
   if (user.state === 'MN' && user.age > 23)
