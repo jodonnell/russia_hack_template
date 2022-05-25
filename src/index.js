@@ -22,17 +22,17 @@ function normalize(user) {
 window.hbc = {};
 window.hbc.imageNameForDemographic = (user) => {
  const normalizedUser = normalize(user);
-  if (user.state === 'TX')
+  if (normalizedUser.state === 'TX')
     return '1.jpg';
-  if (user.state === 'MN' && user.age > 23)
+  if (normalizedUser.state === 'MN' && normalizedUser.age > 23)
     return '2.jpg';
-  if (user.age > 70)
+  if (normalizedUser.age > 70)
     return '3.jpg';
-  if (user.age > 12 && user.age < 18 && ['DE', 'ME'].includes(user.state))
+  if (normalizedUser.age > 12 && normalizedUser.age < 18 && ['DE', 'ME'].includes(normalizedUser.state))
     return '4.jpg';
-  if (user.gender === 'F' && (user.age > 23 && user.age < 30) || (user.age > 50 && user.age < 70))
+  if (normalizedUser.gender === 'F' && (normalizedUser.age > 23 && normalizedUser.age < 30) || (normalizedUser.age > 50 && normalizedUser.age < 70))
     return '5.jpg';
-  if (user.gender === 'M')
+  if (normalizedUser.gender === 'M')
     return '1.jpg';
   return '6.jpg';
 };
